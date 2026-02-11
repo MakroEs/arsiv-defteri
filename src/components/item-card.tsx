@@ -62,10 +62,10 @@ export function ItemCard({ item, className }: ItemCardProps) {
                     />
                 )}
 
-                {/* Overlays */}
+                {}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
 
-                {/* Top Left: Status */}
+                {}
                 <div className="absolute left-3 top-3 z-10">
                     <Badge variant="outline" className={cn("flex items-center gap-1 border-none px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider backdrop-blur-md shadow-lg", status.color)}>
                         <StatusIcon className="h-3 w-3" />
@@ -73,7 +73,7 @@ export function ItemCard({ item, className }: ItemCardProps) {
                     </Badge>
                 </div>
 
-                {/* Top Right: Type & Favorite */}
+                {}
                 <div className="absolute right-3 top-3 z-10 flex flex-col gap-2 items-end">
                     <div className="flex h-7 w-7 items-center justify-center rounded-xl bg-black/40 text-white backdrop-blur-md border border-white/10 shadow-lg">
                         <TypeIcon className="h-3.5 w-3.5" />
@@ -85,7 +85,7 @@ export function ItemCard({ item, className }: ItemCardProps) {
                     )}
                 </div>
 
-                {/* Bottom Info (Peek on Hover) */}
+                {}
                 <div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                     <div className="flex flex-wrap gap-1.5">
                         <Badge variant="secondary" className="bg-white/10 text-white border-none text-[8px] font-bold backdrop-blur-sm">

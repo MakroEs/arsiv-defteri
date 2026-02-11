@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { createClient } from '@/lib/supabase/client'
 import { useQuery } from '@tanstack/react-query'
 import { ItemCard } from '@/components/item-card'
@@ -27,7 +29,7 @@ export default function FavoritesPage() {
 
     return (
         <div className="space-y-12 pb-20 animate-in fade-in duration-700">
-            {/* Header Area */}
+            {}
             <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-3">
                     <div className="rounded-xl bg-amber-500/10 p-2.5 text-amber-500 shadow-sm shadow-amber-500/5">
@@ -41,7 +43,7 @@ export default function FavoritesPage() {
                 </div>
             </div>
 
-            {/* Content Area */}
+            {}
             {isLoading ? (
                 <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mb-12">
                     {[...Array(6)].map((_, i) => (

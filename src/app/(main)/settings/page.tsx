@@ -41,7 +41,6 @@ export default function SettingsPage() {
         },
     })
 
-    // Fetch user profile
     useEffect(() => {
         async function getProfile() {
             const { data: { user } } = await supabase.auth.getUser()
@@ -77,19 +76,16 @@ export default function SettingsPage() {
             const fileName = `${userId}/${Math.random()}.${fileExt}`
             const filePath = `${fileName}`
 
-            // Upload to avatars bucket
             const { error: uploadError } = await supabase.storage
                 .from('avatars')
                 .upload(filePath, file)
 
             if (uploadError) throw uploadError
 
-            // Get public URL
             const { data: { publicUrl } } = supabase.storage
                 .from('avatars')
                 .getPublicUrl(filePath)
 
-            // Update form and database
             form.setValue('avatar_url', publicUrl)
 
             const { error: updateError } = await supabase
@@ -145,15 +141,15 @@ export default function SettingsPage() {
 
     return (
         <div className="space-y-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-500">
-            {/* Header */}
+            { }
             <div>
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-serif">Profil Ayarları</h2>
                 <p className="text-muted-foreground mt-1">Hesap bilgilerinizi güncelleyin.</p>
             </div>
 
-            {/* Profile Card */}
+            { }
             <div className="rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950 overflow-hidden">
-                {/* Avatar Section */}
+                { }
                 <div className="bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 p-8 flex flex-col items-center">
                     <div className="relative group">
                         <Avatar className="h-24 w-24 border-4 border-white dark:border-slate-900 shadow-lg">
@@ -177,18 +173,13 @@ export default function SettingsPage() {
                             id="avatar-upload"
                             type="file"
                             accept="image/*"
-                            className="hidden"
                             onChange={onAvatarChange}
+                            className="hidden"
                             disabled={isUploading}
                         />
                     </div>
-                    <h3 className="mt-4 text-xl font-semibold font-serif text-slate-900 dark:text-slate-50">
-                        {currentName || 'Kullanıcı'}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">{email}</p>
                 </div>
 
-                {/* Form Section */}
                 <div className="p-6">
                     <Form {...form}>
                         <form onSubmit={form.handleSubmit(onProfileSubmit)} className="space-y-5">
@@ -213,7 +204,7 @@ export default function SettingsPage() {
                                 )}
                             />
 
-                            {/* Email - Read Only */}
+                            { }
                             <div className="space-y-2">
                                 <label className="flex items-center gap-2 text-sm font-medium">
                                     <Mail className="h-4 w-4 text-muted-foreground" />

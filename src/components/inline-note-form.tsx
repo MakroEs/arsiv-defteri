@@ -54,7 +54,6 @@ export function InlineNoteForm({ itemId, onSuccess }: InlineNoteFormProps) {
         },
     })
 
-    // Auto-set type to spoiler if switch is on, and vice versa
     const isSpoiler = form.watch('is_spoiler')
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -80,7 +79,6 @@ export function InlineNoteForm({ itemId, onSuccess }: InlineNoteFormProps) {
 
             if (error) throw error
 
-            // Invalidate queries to refresh the notes list immediately
             queryClient.invalidateQueries({ queryKey: ['notes', itemId] })
             queryClient.invalidateQueries({ queryKey: ['all-notes'] })
 

@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useParams, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
@@ -83,7 +85,7 @@ export default function ItemDetailPage() {
         if (error) {
             toast.error('Silinirken bir hata oluştu')
         } else {
-            // Invalidate queries to refresh the list in library and dashboard
+
             queryClient.invalidateQueries({ queryKey: ['items'] })
             queryClient.invalidateQueries({ queryKey: ['dashboard'] })
 
@@ -107,7 +109,7 @@ export default function ItemDetailPage() {
 
     return (
         <div className="space-y-10 pb-20 animate-in fade-in duration-700">
-            {/* Navigation Header */}
+            {}
             <div className="flex items-center justify-between">
                 <Button variant="ghost" className="pl-0 gap-2 font-bold text-muted-foreground hover:text-primary transition-colors" onClick={() => router.back()}>
                     <ChevronLeft className="h-5 w-5" />
@@ -141,9 +143,9 @@ export default function ItemDetailPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12">
-                {/* LEFT COLUMN: Cover & Meta */}
+                {}
                 <div className="lg:col-span-4 space-y-8">
-                    {/* Cover Panel */}
+                    {}
                     <div className="relative aspect-[2/3] w-full overflow-hidden rounded-[2.5rem] bg-card border shadow-2xl shadow-primary/5 transition-transform duration-500 hover:scale-[1.01]">
                         {item.cover_url ? (
                             <Image
@@ -179,7 +181,7 @@ export default function ItemDetailPage() {
                         </div>
                     </div>
 
-                    {/* Meta Card */}
+                    {}
                     <div className="rounded-[2rem] border bg-card p-8 space-y-8 shadow-sm">
                         <div className="grid grid-cols-2 gap-8">
                             <div className="space-y-2">
@@ -206,7 +208,7 @@ export default function ItemDetailPage() {
                     </div>
                 </div>
 
-                {/* RIGHT COLUMN: Content Tabs */}
+                {}
                 <div className="lg:col-span-8 flex flex-col space-y-10">
                     <div>
                         <Badge variant="secondary" className="mb-4 bg-primary/10 text-primary border-none text-[10px] font-bold tracking-[0.2em] uppercase">

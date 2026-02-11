@@ -32,13 +32,11 @@ export default function StatsPage() {
             const watching = items.filter(i => i.status === 'in_progress').length
             const planned = items.filter(i => i.status === 'planned').length
 
-            // Average Rating
             const ratedItems = items.filter(i => i.rating !== null && i.rating !== undefined)
             const avgRating = ratedItems.length > 0
                 ? (ratedItems.reduce((acc, curr) => acc + (curr.rating || 0), 0) / ratedItems.length).toFixed(1)
                 : '0.0'
 
-            // Type Distribution for Pie Chart
             const typeDistData = Object.entries(
                 items.reduce((acc, curr) => {
                     const typeLabels: Record<string, string> = {
@@ -56,7 +54,6 @@ export default function StatsPage() {
                 }, {} as Record<string, number>)
             ).map(([name, value]) => ({ name, value }))
 
-            // Status Distribution for Bar Chart
             const statusLabels: Record<string, string> = {
                 'planned': 'Planlandı',
                 'in_progress': 'Devam Ediyor',
@@ -69,7 +66,6 @@ export default function StatsPage() {
                 value: items.filter(i => i.status === key).length
             }))
 
-            // Activity Chart (last 6 months)
             const last6Months = Array.from({ length: 6 }).map((_, i) => {
                 const date = subMonths(new Date(), i)
                 return {
@@ -113,13 +109,13 @@ export default function StatsPage() {
 
     return (
         <div className="space-y-10 pb-10 animate-in fade-in duration-700">
-            {/* Header */}
+            {}
             <div className="flex flex-col gap-2">
                 <h2 className="font-serif text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-50">İstatistik Arşivi</h2>
                 <p className="text-muted-foreground font-serif italic text-lg opacity-80">Listenizin sayısal öyküsü ve gelişiminiz.</p>
             </div>
 
-            {/* Key Metrics Dashboard */}
+            {}
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                 {[
                     { title: 'Toplam İçerik', value: stats?.total, icon: TrendingUp, color: 'text-indigo-600', bg: 'bg-indigo-50 dark:bg-indigo-950/30' },
@@ -142,7 +138,7 @@ export default function StatsPage() {
             </div>
 
             <div className="grid gap-6 lg:grid-cols-7">
-                {/* Status Bar Chart */}
+                {}
                 <Card className="lg:col-span-4 border-none shadow-md bg-white dark:bg-slate-950 ring-1 ring-slate-200 dark:ring-slate-800">
                     <CardHeader>
                         <div className="flex items-center gap-2 mb-1">
@@ -166,7 +162,7 @@ export default function StatsPage() {
                     </CardContent>
                 </Card>
 
-                {/* Type Pie Chart */}
+                {}
                 <Card className="lg:col-span-3 border-none shadow-md bg-white dark:bg-slate-950 ring-1 ring-slate-200 dark:ring-slate-800">
                     <CardHeader>
                         <div className="flex items-center gap-2 mb-1">
@@ -201,7 +197,7 @@ export default function StatsPage() {
                 </Card>
             </div>
 
-            {/* Activity Chart (Time series) */}
+            {}
             <Card className="border-none shadow-md bg-white dark:bg-slate-950 ring-1 ring-slate-200 dark:ring-slate-800">
                 <CardHeader>
                     <div className="flex items-center gap-2 mb-1">
@@ -231,7 +227,7 @@ export default function StatsPage() {
                 </CardContent>
             </Card>
 
-            {/* Empty State / Encouragement */}
+            {}
             {stats?.total === 0 && (
                 <div className="flex h-60 flex-col items-center justify-center gap-4 rounded-3xl border border-dashed border-slate-200 bg-slate-50/50 text-center dark:border-slate-800 dark:bg-slate-950/50">
                     <Calendar className="h-10 w-10 text-slate-300" />

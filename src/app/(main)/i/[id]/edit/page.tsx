@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState, useEffect } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -152,7 +154,6 @@ export default function EditItemPage() {
 
             if (error) throw error
 
-            // Invalidate queries to refresh the data everywhere
             queryClient.invalidateQueries({ queryKey: ['items'] })
             queryClient.invalidateQueries({ queryKey: ['item', id] })
             queryClient.invalidateQueries({ queryKey: ['dashboard'] })
@@ -176,7 +177,6 @@ export default function EditItemPage() {
 
     return (
         <div className="max-w-5xl mx-auto space-y-10 pb-20">
-            {/* Header */}
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                     <Button variant="ghost" size="sm" className="rounded-xl gap-2 font-bold text-muted-foreground" onClick={() => router.back()}>
@@ -193,7 +193,6 @@ export default function EditItemPage() {
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                        {/* LEFT: Cover & Settings */}
                         <div className="lg:col-span-4 space-y-6">
                             <Card className="overflow-hidden rounded-[2.5rem] border-none shadow-xl bg-card">
                                 <CardContent className="p-0 relative aspect-[2/3]">
@@ -247,7 +246,6 @@ export default function EditItemPage() {
                             />
                         </div>
 
-                        {/* RIGHT: Detailed Info */}
                         <div className="lg:col-span-8 space-y-8">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <FormField

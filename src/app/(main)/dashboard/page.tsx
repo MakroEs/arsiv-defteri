@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState, useEffect } from 'react'
 
 import { createClient } from '@/lib/supabase/client'
@@ -29,7 +31,6 @@ export default function DashboardPage() {
         getProfile()
     }, [supabase])
 
-    // Fetch 'in_progress' items for Quick Continue
     const { data: watchingItems, isLoading: loadingWatching } = useQuery({
         queryKey: ['dashboard', 'in_progress'],
         queryFn: async () => {
@@ -45,7 +46,6 @@ export default function DashboardPage() {
         }
     })
 
-    // Fetch recent items
     const { data: recentItems, isLoading: loadingRecent } = useQuery({
         queryKey: ['dashboard', 'recent'],
         queryFn: async () => {
@@ -60,7 +60,6 @@ export default function DashboardPage() {
         }
     })
 
-    // Fetch a random 'planned' item for recommendation
     const { data: randomPick } = useQuery({
         queryKey: ['dashboard', 'random'],
         queryFn: async () => {
@@ -81,7 +80,7 @@ export default function DashboardPage() {
 
     return (
         <div className="space-y-16 pb-20 animate-in fade-in duration-700">
-            {/* 0. Header & Greeting */}
+            {}
             <div className="flex flex-col gap-6 md:flex-row md:items-end justify-between">
                 <div className="space-y-2">
                     <div className="flex items-center gap-3">
@@ -122,7 +121,7 @@ export default function DashboardPage() {
                 </div>
             )}
 
-            {/* 1. Hero / Random Pick */}
+            {}
             {randomPick && (
                 <section className="relative group overflow-hidden rounded-[2rem] bg-card border shadow-2xl shadow-primary/5 transition-all duration-500 hover:shadow-primary/10">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-50"></div>
@@ -161,7 +160,7 @@ export default function DashboardPage() {
                 </section>
             )}
 
-            {/* 2. Quick Continue */}
+            {}
             {watchingItems && watchingItems.length > 0 && (
                 <section className="space-y-8">
                     <div className="flex items-center justify-between">
@@ -198,7 +197,7 @@ export default function DashboardPage() {
                 </section>
             )}
 
-            {/* 3. Shelf / Recent Grid */}
+            {}
             <section className="space-y-8">
                 <div className="flex items-center justify-between">
                     <div className="space-y-1">

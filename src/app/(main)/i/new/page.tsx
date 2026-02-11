@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -96,7 +98,6 @@ export default function NewItemPage() {
                 coverUrl = publicUrlData.publicUrl
             }
 
-            // Progress parsing (e.g., "Season 3" -> value: 3, unit: "Season")
             let progressValue = null
             let progressUnit = values.progress || null
 
@@ -104,7 +105,6 @@ export default function NewItemPage() {
                 const numberMatch = values.progress.match(/\d+/)
                 if (numberMatch) {
                     progressValue = parseInt(numberMatch[0])
-                    // Optional: remove number from unit if you want, but keeping it as is for now
                 }
             }
 
@@ -125,7 +125,6 @@ export default function NewItemPage() {
 
             if (error) throw error
 
-            // Invalidate queries to refresh the list in library and dashboard
             queryClient.invalidateQueries({ queryKey: ['items'] })
             queryClient.invalidateQueries({ queryKey: ['dashboard'] })
 
@@ -142,7 +141,7 @@ export default function NewItemPage() {
 
     return (
         <div className="space-y-6">
-            {/* Header & Navigation */}
+            {}
             <div className="flex items-center gap-4">
                 <Button variant="ghost" size="icon" onClick={() => router.back()}>
                     <ChevronLeft className="h-4 w-4" />
@@ -157,7 +156,7 @@ export default function NewItemPage() {
                 <form onSubmit={form.handleSubmit(onSubmit)}>
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
 
-                        {/* LEFT COLUMN: Basic Info */}
+                        {}
                         <div className="space-y-6">
                             <Card className="border-0 shadow-none bg-transparent">
                                 <CardContent className="p-0 space-y-6">
@@ -229,7 +228,7 @@ export default function NewItemPage() {
                             </Card>
                         </div>
 
-                        {/* RIGHT COLUMN: Details */}
+                        {}
                         <div className="lg:col-span-2 space-y-6">
                             <Card className="rounded-2xl border-slate-200 dark:border-slate-800">
                                 <CardContent className="p-6 space-y-6">

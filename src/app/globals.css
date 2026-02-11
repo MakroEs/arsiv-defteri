@@ -53,7 +53,6 @@
 :root {
   --radius: 0.75rem;
 
-  /* Pure & Minimal Light Mode */
   --background: oklch(1 0 0);
   --foreground: oklch(0.1 0 0);
 
@@ -64,7 +63,7 @@
   --popover-foreground: oklch(0.1 0 0);
 
   --primary: oklch(0.60 0.16 160);
-  /* Emerald */
+  
   --primary-foreground: oklch(1 0 0);
 
   --secondary: oklch(0.97 0 0);
@@ -94,7 +93,7 @@
 }
 
 .dark {
-  /* Premium Pitch Black Dark Mode */
+  
   --background: oklch(0 0 0);
   --foreground: oklch(0.98 0 0);
 
@@ -105,7 +104,7 @@
   --popover-foreground: oklch(0.98 0 0);
 
   --primary: oklch(0.75 0.15 160);
-  /* Brighter Emerald for Dark */
+  
   --primary-foreground: oklch(0 0 0);
 
   --secondary: oklch(0.12 0 0);
@@ -146,7 +145,6 @@
     font-feature-settings: "ss01", "ss02", "cv01", "cv02";
   }
 
-  /* 1. Animated Aurora Background */
   body::before {
     content: "";
     @apply fixed inset-0 -z-50 pointer-events-none;
@@ -160,7 +158,6 @@
     animation: aurora 30s ease infinite alternate;
   }
 
-  /* 2. Soft Blob Animation */
   body::after {
     content: "";
     @apply fixed top-[-20%] left-[-10%] w-[60%] h-[60%] -z-10 rounded-full bg-primary/5 pointer-events-none;
@@ -168,7 +165,6 @@
     animation: blob-move 20s infinite linear;
   }
 
-  /* Typography Defaults */
   h1,
   h2,
   h3,

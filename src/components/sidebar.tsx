@@ -98,7 +98,7 @@ export function Sidebar({ className, onSelect, showLogo = true }: { className?: 
 
     return (
         <div className={cn("flex h-full w-full flex-col border-r bg-sidebar text-sidebar-foreground transition-colors duration-300", className)}>
-            {/* 1. Logo Section */}
+            {}
             {showLogo && (
                 <div className="px-8 py-10">
                     <Link href="/dashboard" className="group block space-y-1">
@@ -112,7 +112,7 @@ export function Sidebar({ className, onSelect, showLogo = true }: { className?: 
                 </div>
             )}
 
-            {/* 2. Quick Action */}
+            {}
             <div className="px-6 pb-8">
                 <Button
                     className="w-full justify-start gap-3 rounded-xl bg-primary px-5 py-6 text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] hover:shadow-xl active:scale-[0.98] font-semibold"
@@ -126,7 +126,7 @@ export function Sidebar({ className, onSelect, showLogo = true }: { className?: 
                 </Button>
             </div>
 
-            {/* 3. Navigation */}
+            {}
             <div className="flex-1 overflow-auto px-3">
                 <nav className="space-y-1.5">
                     {sidebarItems.map((item, index) => {
@@ -155,7 +155,7 @@ export function Sidebar({ className, onSelect, showLogo = true }: { className?: 
                 </nav>
             </div>
 
-            {/* 4. Bottom Section: Profile & Logout */}
+            {}
             <div className="mt-auto border-t p-4 space-y-4">
                 <div className="flex items-center justify-between gap-2 rounded-xl border bg-card/50 p-3 shadow-sm backdrop-blur-sm">
                     <div className="flex items-center gap-3 overflow-hidden">

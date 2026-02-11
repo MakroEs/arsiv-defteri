@@ -24,12 +24,12 @@ export default function MainLayout({
         <div className="flex h-screen overflow-hidden bg-background">
             <div className="grain-overlay" />
 
-            {/* Desktop Sidebar */}
+            {}
             <aside className="hidden lg:block w-72 shrink-0 border-r bg-card">
                 <Sidebar />
             </aside>
 
-            {/* Mobile Top Bar */}
+            {}
             <header className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 h-20 bg-background/60 backdrop-blur-xl border-b border-white/5">
                 <Link href="/dashboard" className="flex flex-col">
                     <span className="font-serif text-xl font-bold tracking-tight">Arşiv Defteri</span>
@@ -55,7 +55,7 @@ export default function MainLayout({
                 )}
             </header>
 
-            {/* Main Content Area */}
+            {}
             <main className="flex-1 overflow-y-auto w-full relative">
                 <div className={cn(
                     "container mx-auto p-6 md:p-8 lg:p-12 max-w-7xl min-h-screen",

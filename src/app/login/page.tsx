@@ -119,10 +119,10 @@ export default function AuthPage() {
         <div className="relative min-h-screen w-full flex items-center justify-center p-4 md:p-8">
             <div className="w-full max-w-[1100px] grid lg:grid-cols-2 gap-0 overflow-hidden rounded-[2.5rem] border bg-card/60 backdrop-blur-3xl shadow-2xl">
 
-                {/* Visual Side */}
+                {}
                 <div className="hidden lg:flex relative bg-black items-center justify-center p-12 overflow-hidden">
                     <div className="absolute inset-0 z-0">
-                        {/* Abstract Art/Overlay */}
+                        {}
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-blue-500/20" />
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-from)_0%,_transparent_70%)] from-emerald-500" />
                     </div>
@@ -141,7 +141,7 @@ export default function AuthPage() {
                     </div>
                 </div>
 
-                {/* Form Side */}
+                {}
                 <div className="flex flex-col p-8 md:p-16 justify-center bg-background/40">
                     <div className="mb-10 text-center lg:text-left space-y-2">
                         <h2 className="font-serif text-3xl font-bold tracking-tight">Hoş Geldiniz</h2>

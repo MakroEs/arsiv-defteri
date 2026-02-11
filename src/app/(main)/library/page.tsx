@@ -1,5 +1,7 @@
 'use client'
 
+export const dynamic = 'force-dynamic'
+
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useQuery } from '@tanstack/react-query'
@@ -37,7 +39,7 @@ export default function LibraryPage() {
 
     return (
         <div className="space-y-10 pb-20 animate-in fade-in duration-700">
-            {/* Toolbar */}
+            {}
             <div className="flex flex-col gap-6 md:flex-row md:items-center justify-between">
                 <div className="relative flex-1 max-w-md group">
                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
@@ -81,7 +83,7 @@ export default function LibraryPage() {
                 </div>
             </div>
 
-            {/* Grid */}
+            {}
             {isLoading ? (
                 <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 mb-12">
                     {[...Array(12)].map((_, i) => (
