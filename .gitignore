@@ -1,6 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Arşiv Defteri - Project Ignore Rules
 
-# dependencies
+# --- DEPENDENCIES ---
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +10,53 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# --- BUILD & CACHE ---
 /.next/
 /out/
-
-# production
 /build
+/dist
+*.tsbuildinfo
+next-env.d.ts
+.turbo
 
-# misc
-.DS_Store
+# --- ENVIRONMENT & SECRETS ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.pem
+*.key
 
-# debug
+# --- DEBUG & LOGS ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
 
-# env files (can opt-in for committing if needed)
-.env*
+# --- IDE & EDITORS ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+*.swp
+*.swo
+.project
+.classpath
+.settings/
 
-# vercel
+# --- OS CLUTTER ---
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# --- SUPABASE & TOOLS ---
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+/supabase/.temp/
+.antigravity/
+.gemini/

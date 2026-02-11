@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arşiv Defteri 📚🎬🎮
 
-## Getting Started
+**Arşiv Defteri**, izlediğiniz dizileri, filmleri, okuduğunuz kitapları ve oynadığınız oyunları şık bir arayüzle kayıt altına almanızı sağlayan kişisel bir medya kütüphanesi ve günlüktür. Sinematik ve edebi bir dergi estetiği ile tasarlanmıştır.
 
-First, run the development server:
+## ✨ Özellikler
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Çok Yönlü Arşiv**: Dizi, Film, Kitap, Oyun, Manga, Podcast ve Belgesel desteği.
+- **Dinamik Dashboard**: Size özel öneriler, yarım kalan hikayeler (Devam Et) ve son eklemeler.
+- **Detaylı Notlar**: Her içerik için "Spoiler", "Analiz" veya "Alıntı" türünde zengin notlar tutun.
+- **Akıllı Durum Takibi**: Planlandı, Devam Ediyor, Bitti, Bırakıldı ve Tekrar gibi durumlarla ajandanızı yönetin.
+- **Gerçek Zamanlı Senkronizasyon**: Yapılan tüm değişiklikler (not ekleme, silme, düzenleme) anında tüm sayfalarda güncellenir.
+- **Premium Tasarım**: Karanlık mod odaklı, cam (glassmorphism) efektli, serif tipografisiyle zenginleştirilmiş kullanıcı deneyimi.
+- **Favoriler**: En sevdiğiniz içerikleri tek tıkla işaretleyin ve kolayca erişin.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Teknolojiler
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: Next.js 16 (App Router), React, Tailwind CSS
+- **Backend/Database**: Supabase (Auth & PostgreSQL)
+- **State Management**: React Query (TanStack Query)
+- **Components**: Shadcn/ui & Radix UI
+- **İkonlar**: Lucide React
+- **Form Yönetimi**: React Hook Form & Zod
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Kurulum
 
-## Learn More
+1. Depoyu klonlayın:
+   ```bash
+   git clone https://github.com/username/arsiv-defteri.git
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. Bağımlılıkları yükleyin:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. `.env.local` dosyasını oluşturun ve Supabase bilgilerinizi ekleyin:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Uygulamayı başlatın:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+## 📜 Lisans
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Bu proje MIT lisansı altında lisanslanmıştır.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*Arşiv Defteri ile kendi hikayeni yazmaya başla.*
